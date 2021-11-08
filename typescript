@@ -1,0 +1,137 @@
+Script started on Tue 21 Sep 2021 03:51:54 PM EDT
+Turning off DOT_DEBUG
+chukar% g[Kchukar% g++ -Wall -std=c++98 project1.cpp -o project1.exe
+chukar% valgrind --leak-check=full ./project1.exe”[K
+==4477== Memcheck, a memory error detector
+==4477== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==4477== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==4477== Command: ./project1.exe
+==4477== 
+Enter the initial balance of the account: 999.99
+Enter the number of months to accrue interest: 4
+Show month-by-month results - 'y' for yes, any other for no: y
+Accruing interest for 1 month:
+  Initial balance: 999.99
+  Initial rate: 0.0015
+  Interest accrued: 1.49999
+  New balance: 1001.49
+Accruing interest for 1 month:
+  Initial balance: 1001.49
+  Initial rate: 0.00225
+  Interest accrued: 2.25335
+  New balance: 1003.74
+Accruing interest for 1 month:
+  Initial balance: 1003.74
+  Initial rate: 0.00225
+  Interest accrued: 2.25842
+  New balance: 1006
+Accruing interest for 1 month:
+  Initial balance: 1006
+  Initial rate: 0.00225
+  Interest accrued: 2.2635
+  New balance: 1008.27
+Interest accrued for 4 months!
+Initial balance: 999.99
+Total interest accrued: 8.27526
+Final balance: 1008.27
+==4477== 
+==4477== HEAP SUMMARY:
+==4477==     in use at exit: 0 bytes in 0 blocks
+==4477==   total heap usage: 1 allocs, 1 frees, 57 bytes allocated
+==4477== 
+==4477== All heap blocks were freed -- no leaks are possible
+==4477== 
+==4477== For counts of detected and suppressed errors, rerun with: -v
+==4477== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)
+chukar% valgrind --leak-check=full ./project1.exe”
+valgrind: ./project1.exe”: No such file or directory
+chukar% valgrind --leak-check=full ./project1.exe”
+valgrind: ./project1.exe”: No such file or directory
+chukar% valgrind --leak-check=full ./project1.exe
+==4746== Memcheck, a memory error detector
+==4746== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==4746== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==4746== Command: ./project1.exe
+==4746== 
+Enter the initial balance of the account: 999.99
+Enter the number of months to accrue interest: 4
+Show month-by-month results - 'y' for yes, any other for no: n
+Interest accrued for 4 months!
+Initial balance: 999.99
+Total interest accrued: 8.27526
+Final balance: 1008.27
+==4746== 
+==4746== HEAP SUMMARY:
+==4746==     in use at exit: 0 bytes in 0 blocks
+==4746==   total heap usage: 1 allocs, 1 frees, 57 bytes allocated
+==4746== 
+==4746== All heap blocks were freed -- no leaks are possible
+==4746== 
+==4746== For counts of detected and suppressed errors, rerun with: -v
+==4746== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)
+chukar% valgrind --leak-check=full ./project1.exe
+==4769== Memcheck, a memory error detector
+==4769== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==4769== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==4769== Command: ./project1.exe
+==4769== 
+Enter the initial balance of the account: -999.99
+Enter the number of months to accrue interest: 4
+Show month-by-month results - 'y' for yes, any other for no: n
+ERROR in accrueInterest: numMonths must be > 0, but the value -999.99 was provided!
+Sorry, an error was detected.  Unable to provide results!
+==4769== 
+==4769== HEAP SUMMARY:
+==4769==     in use at exit: 0 bytes in 0 blocks
+==4769==   total heap usage: 1 allocs, 1 frees, 57 bytes allocated
+==4769== 
+==4769== All heap blocks were freed -- no leaks are possible
+==4769== 
+==4769== For counts of detected and suppressed errors, rerun with: -v
+==4769== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)
+chukar% valgrind --leak-check=full ./project1.exe
+==4773== Memcheck, a memory error detector
+==4773== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==4773== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==4773== Command: ./project1.exe
+==4773== 
+Enter the initial balance of the account: 1500.00
+Enter the number of months to accrue interest: -3
+Show month-by-month results - 'y' for yes, any other for no: n
+ERROR in accrueInterest: numMonths must be > 0, but the value -3 was provided!
+Sorry, an error was detected.  Unable to provide results!
+==4773== 
+==4773== HEAP SUMMARY:
+==4773==     in use at exit: 0 bytes in 0 blocks
+==4773==   total heap usage: 1 allocs, 1 frees, 57 bytes allocated
+==4773== 
+==4773== All heap blocks were freed -- no leaks are possible
+==4773== 
+==4773== For counts of detected and suppressed errors, rerun with: -v
+==4773== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)
+chukar% valgrind --leak-check=full ./project1.exe
+==4775== Memcheck, a memory error detector
+==4775== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==4775== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==4775== Command: ./project1.exe
+==4775== 
+Enter the initial balance of the account: 980.00
+Enter the number of months to accrue interest: 1500
+Show month-by-month results - 'y' for yes, any other for no: n
+Interest accrued for 1500 months!
+Initial balance: 980
+Total interest accrued: 45116.8
+Final balance: 46096.8
+==4775== 
+==4775== HEAP SUMMARY:
+==4775==     in use at exit: 0 bytes in 0 blocks
+==4775==   total heap usage: 1 allocs, 1 frees, 57 bytes allocated
+==4775== 
+==4775== All heap blocks were freed -- no leaks are possible
+==4775== 
+==4775== For counts of detected and suppressed errors, rerun with: -v
+==4775== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)
+chukar% exit
+exit
+
+Script done on Tue 21 Sep 2021 03:54:53 PM EDT
